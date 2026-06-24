@@ -1,0 +1,16 @@
+# Config
+wifi_config.h
+
+# Espressif IDE generated
+.settings/
+.cproject
+.project
+.clangd
+
+# System files
+build/
+*.bin
+*.elf
+
+.vscode/
+.DS_Store
