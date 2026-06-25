@@ -57,7 +57,7 @@ Radio mode
 ![Radio mode](./images/radio_mode.jpg)
 
 Service mode, графики, Python
-![Radio mode](./images/service_mode.png)
+![Service mode](./images/service_mode.png)
 
 ## Todo
 Развести плату в KiCad, перенести приёмник на неё. Убрать в корпус.
