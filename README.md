@@ -1,11 +1,63 @@
-ESP-IDF template app
-====================
+# TEF6686_autodx
 
-This is a template application to be used with [Espressif IoT Development Framework](https://github.com/espressif/esp-idf).
 
-Please check [ESP-IDF docs](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/index.html) for getting started instructions.
+## Описание
+TEF6686_autodx — мой проект на базе ESP32 и DSP-тюнера NXP TEF6686, предназначенный для автоматического сканирования диапазона и отслеживания дальних FM-радиостанций.
 
-*Code in this repository is in the Public Domain (or CC0 licensed, at your option.)
-Unless required by applicable law or agreed to in writing, this
-software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-CONDITIONS OF ANY KIND, either express or implied.*
+Проект создан на основе [моего исследования](https://amironoff.ru/?go=all/issledovanie-vozmozhnostey-tef6686-chast-1/) возможностей чипа TEF6686.
+
+
+## Возможности
+- Автоматическое сканирование диапазона
+- Передача зарегистрированных данных по REST API на сервер в БД MySQL
+- Анализ полученных данных на сервере (PHP)
+- Детектирование наличия дальних станций
+- Уведомления о дальних станциях через бота в Телеграм
+- Вывод графиков в Grafana по каждой частоте (Level, Bandwidth и другие показатели)
+- Декодер RDS
+- Сервисный режим (телеметрия отправляется в UART для отладки)
+- Ручной режим прослушивания
+
+
+## Железо
+- ESP32
+- Модуль/чип TEF6686
+- Дисплей 2004
+
+
+## Софт
+- Язык C (FreeRTOS, i2c)
+- REST API, JSON
+- PHP, MySQL
+- Grafana
+- Python (вывод данных из UART)
+
+
+## Использование приёмника
+### Monitoring mode
+Запускается автоматически при подаче питания. Сканирует диапазон и отправляет телеметрию на сервер.
+
+### Radio mode
+Ручной режим настройки и приёма. Отображаются показатели Level, AGC, BW и RDS.
+
+### Service mode
+Сервисный режим. Зарегистрированная телеметрия отправляется в UART для ручного анализа.
+
+### Settings mode
+Настройки приёмка. Планирую добавить изменение настроек AGC и некоторых других параметров приёмника.
+
+
+## Фото и видео
+[Видео](https://rutube.ru/video/private/54121d4a54da772ec80f4cac57af5886/?p=fjRjQla9kpcqGUS7Zq8AfQ) с приёмом дальней станции из Швеции (расстояние около 2000 км)
+
+Monitoring mode
+![Monitoring mode](./images/monitoring_mode.jpg)
+
+Radio mode
+![Radio mode](./images/radio_mode.jpg)
+
+Service mode, графики, Python
+![Radio mode](./images/service_mode.png)
+
+## Todo
+Развести плату в KiCad, перенести приёмник на неё. Убрать в корпус.
