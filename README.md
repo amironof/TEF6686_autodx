@@ -59,5 +59,15 @@ Radio mode
 Service mode, графики, Python
 ![Service mode](./images/service_mode.png)
 
+Grafana - спектр эфира
+![Grafana - спектр эфира](./images/grafana_sp.png)
+
+Grafana - по частотам
+![Grafana - по частотам](./images/grafana_all.png)
+
+Уведомление о тропосферном проходе в Телеграм
+![Уведомление о тропосферном проходе в Телеграм](./images/tg.png)
+
+
 ## Todo
 Развести плату в KiCad, перенести приёмник на неё. Убрать в корпус.
